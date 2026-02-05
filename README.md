@@ -1,15 +1,21 @@
-﻿# Using NLog with AVR 
+﻿# Using NLog with ASNA Visual RPG
 
+[NLog](https://nlog-project.org/) is a simple, but effective, logger for .NET and .NET Framework. It is simple to configure and use. Nlog is open source and free to use in your commercial applications. It is a very popular [Nuget package](https://www.nuget.org/packages/NLog) with more than 5m downloads.
+
+This example shows a very minimal way to use NLog with Visual RPG. Check the [NLog docs ](https://nlog-project.org/)for more detail. There are many interesting ways to configure Nlog.  
 ## 1. Install NLog with Nuget Package Manager
 
-```
-Install-Package NLog.Config
-```
+Open Visual Studio's Package Manager Console 
+
+![https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/installing-nlog-1-13-03-17-06.webp](https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/installing-nlog-1-13-03-17-06.webp)
+
+Type `Install-Package Nlog.Config` to install the Nlog Nuget package.
+
+![https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/installing-nlog-2-13-05-22-31.webp](https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/installing-nlog-2-13-05-22-31.webp)
 
 I got several scary-looking errors during the install (when installing from the Package Manager Console) but the installed finished and did work.  
 
 ![https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/nlog-install-errors-12-20-57-51.webp](https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/nlog-install-errors-12-20-57-51.webp)
-
 ## 2. Update NLog.config
 
 Installing NLog puts an `NLog.config` file in the root of your project. Remove its contents and replace with: 
@@ -65,11 +71,20 @@ EndSr
 
 This makes a `Log` instance available to the page with which you can write messages to the log file. 
 
+> There are probably better ways to make NLog available in your app. You may want to create a helper class for NLog that provides static methods which could easily be used anywhere in your application.
 ## 4. Write to the log file
 
 ```
 Log.Info("I am out of coffee.")
 ```
+
+The line above produces this entry in the log file:
+
+```
+2026-02-05 12:32:26.1472 | INFO | Index | I am out of coffee!
+```
+
+`Index` shows what class instance active when the log entry was written.
 
 There are six methods for writing to the log; each conveys the level of the log entry. 
 
@@ -89,5 +104,6 @@ The configuration above sets the minimal log level. In this example it is sent t
 </rules>
 ```
 
+Setting `minLevel` to `Info` means that any log entries written to the `Info` or higher are written to the log. If the `minLevel` is changed to `warn` then `info` level entries are not written to the file. 
 
 
