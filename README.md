@@ -62,7 +62,13 @@ The figure above shows the Solution Explorer view after a log entry has been wri
 
 ## 3. Add the `Log` instance to your code
 
-Add this line to the mainline area of any codebehind `aspx.vr` file: 
+Add this `using` statement:
+
+```
+Using NLog
+```
+
+And add this line to the mainline area of any codebehind `aspx.vr` file: 
 
 ```
 DclFld Log Type(NLog.Logger) Access(*Private)
@@ -118,5 +124,7 @@ The configuration above sets the minimal log level. In this example it is sent t
 ```
 
 Setting `minLevel` to `Info` means that any log entries written to the `Info` or higher are written to the log. If the `minLevel` is changed to `warn` then `info` level entries are not written to the file. 
+
+When you are debugging the app you'll probably want to change the minimum logging to either `Debug` or `Trace`.
 
 
