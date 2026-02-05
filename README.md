@@ -2,6 +2,19 @@
 
 [NLog](https://nlog-project.org/) is a simple, but effective, logger for .NET and .NET Framework. It is simple to configure and use. Nlog is open source and free to use in your commercial applications. It is a very popular [Nuget package](https://www.nuget.org/packages/NLog) with more than 5m downloads.
 
+Using NLog, you can easily write entries into a log file. These log files are plain text files. While the entry can be configured in many ways, a simple example of a log entry is:
+
+```
+2026-02-05 12:32:26.1472 | INFO | Index | I am out of coffee!
+```
+
+Where:
+
+- The first section is the date and time.
+- `INFO` is the log level. 
+- `Index` is the class instance (from your AVR app) from which the log entry was written.
+- The last section of the message is the message text.
+
 This example shows a very minimal way to use NLog with Visual RPG. Check the [NLog docs ](https://nlog-project.org/)for more detail. There are many interesting ways to configure Nlog.  
 ## 1. Install NLog with Nuget Package Manager
 
