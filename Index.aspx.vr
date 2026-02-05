@@ -2,7 +2,7 @@
 
 BegClass Index Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
 
-    DclFld Log Type(NLog.Logger) Shared(*Yes) Access(*Private)
+    DclFld Log Type(NLog.Logger) Access(*Private)
 
     BegSr Page_Load Access(*Private) Event(*This.Load)
         DclSrParm sender Type(*Object)
