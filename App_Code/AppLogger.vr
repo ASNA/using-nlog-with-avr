@@ -1,0 +1,25 @@
+﻿Using NLog
+
+BegClass AppLogger Access(*Public)
+/*
+    Fiddling around with a wrapper class. Probably not necessary.
+    Ignore this for now. 
+
+
+ */
+
+
+    // AppLogger.LogInfo("Hello, World")
+
+
+    BegSr LogInfo Shared(*Yes) Access(*Public)
+        DclSrParm Message Type(*String) 
+
+        DclFld Log Type(NLog.Logger)
+        Log = NLog.LogManager.GetCurrentClassLogger()
+        
+        Log.Info(Message)         
+    EndSr
+
+EndClass
+                            

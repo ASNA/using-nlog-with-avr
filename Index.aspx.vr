@@ -1,0 +1,39 @@
+﻿Using NLog
+
+BegClass Index Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
+
+    DclFld Log Type(NLog.Logger) Shared(*Yes) Access(*Private)
+
+    BegSr Page_Load Access(*Private) Event(*This.Load)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+
+        // Trace: Very detailed logs (typically disabled in production).
+        // Debug: Debugging information.[3]
+        // Info: Normal app behavior (Start/Stop/Page Load).
+        // Warn: Something unexpected happened, but the app is still running.
+        // Error: Something failed (Exceptions).
+        // Fatal: The application crashed.
+
+        If (Log = *Nothing)
+            Log = NLog.LogManager.GetCurrentClassLogger()
+        EndIf
+
+        Try
+            Log.Info("WebForm Page Loaded")
+        Catch ex Type(System.Exception)
+            Log.Error(ex, "An error occurred")
+        EndTry
+
+        If (NOT Page.IsPostBack)
+        Else
+        EndIf
+    EndSr
+
+    BegSr Page_Unload Access(*Private) Event(*This.Unload)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+
+    EndSr
+
+EndClass
