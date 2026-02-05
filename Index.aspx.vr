@@ -20,7 +20,7 @@ BegClass Index Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
         EndIf
 
         Try
-            Log.Info("WebForm Page Loaded")
+            Log.Info("I need coffee")
         Catch ex Type(System.Exception)
             Log.Error(ex, "An error occurred")
         EndTry
