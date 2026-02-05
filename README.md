@@ -7,7 +7,7 @@ This example shows a very minimal way to use NLog with Visual RPG. Check the [NL
 
 Open Visual Studio's Package Manager Console 
 
-![https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/installing-nlog-1-13-03-17-06.webp](https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/installing-nlog-1-13-03-17-06.webp)
+![https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/installing-nlog-1-13-03-17-06.webp](https://asna-assets.nyc3.digitaloceanspaces.com/asna-com/installing-nlog-1-13-03-17-06.webp)
 
 Type `Install-Package Nlog.Config` to install the Nlog Nuget package.
 
@@ -15,7 +15,7 @@ Type `Install-Package Nlog.Config` to install the Nlog Nuget package.
 
 I got several scary-looking errors during the install (when installing from the Package Manager Console) but the installed finished and did work.  
 
-![https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/nlog-install-errors-12-20-57-51.webp](https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/nlog-install-errors-12-20-57-51.webp)
+![https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/nlog-install-errors-12-20-57-51.webp](https://asna-assets.nyc3.digitaloceanspaces.com/asna-com/nlog-install-errors-12-20-57-51.webp)
 ## 2. Update NLog.config
 
 Installing NLog puts an `NLog.config` file in the root of your project. Remove its contents and replace with: 
@@ -43,7 +43,7 @@ The `fileName` value provides the filename for the log. The first time your app 
 
 The `layout` value provides the template for the text written to the log. The `rules` section is discussed further below in this article.
 
-![https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/nlog-in-solution-explorer-12-26-37-46.webp](https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/nlog-in-solution-explorer-12-26-37-46.webp)
+![https://asna-assets.nyc3.digitaloceanspaces.com/asna-com/nlog-in-solution-explorer-12-26-37-46.webp](https://asna-assets.nyc3.cdn.digitaloceanspaces.com/asna-com/nlog-in-solution-explorer-12-26-37-46.webp)
 
 The figure above shows the Solution Explorer view after a log entry has been written. You may need to reload your project the first time a log is created to see the `App_Data` folder in the Solution Explorer.
 
