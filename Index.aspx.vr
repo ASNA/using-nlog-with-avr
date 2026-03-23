@@ -19,11 +19,11 @@ BegClass Index Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
             Log = NLog.LogManager.GetCurrentClassLogger()
         EndIf
 
-        Try
-            Log.Info("I need coffee")
-        Catch ex Type(System.Exception)
-            Log.Error(ex, "An error occurred")
-        EndTry
+//        Try
+//            Log.Info("I need coffee")
+//        Catch ex Type(System.Exception)
+//            Log.Error(ex, "An error occurred")
+//        EndTry
 
         If (NOT Page.IsPostBack)
         Else
@@ -36,4 +36,13 @@ BegClass Index Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
 
     EndSr
 
+	BegSr Button1_Click Access(*Private) Event(*This.Button1.Click)
+		DclSrParm sender Type(*Object)
+		DclSrParm e Type(System.EventArgs)
+
+        DclFld divisor Type(*Integer4) 
+        DclFld result Type(*Integer4) 
+
+        Result = 12 / divisor            	
+	EndSr
 EndClass
